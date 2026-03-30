@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="book_management.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Book Management System</title>
+    <link href="App_Themes/Default/Style.css" rel="stylesheet" />
+</head>
+<body>
+<form runat="server">
+
+    <div class="menu">
+        <asp:HyperLink NavigateUrl="~/Default.aspx" Text="Home" runat="server" />
+        <asp:HyperLink NavigateUrl="~/AddAuthor.aspx" Text="Add Author" runat="server" />
+        <asp:HyperLink NavigateUrl="~/AddCategory.aspx" Text="Add Category" runat="server" />
+        <asp:HyperLink NavigateUrl="~/AddBook.aspx" Text="Add Book" runat="server" />
+    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+
+</form>
+</body>
+</html>

@@ -1,0 +1,203 @@
+﻿/* ================= GLOBAL ================= */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #eef2f7, #f9fbfd);
+    margin: 0;
+}
+
+/* ================= NAVBAR ================= */
+.menu {
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+}
+
+    .menu a {
+        color: #fff;
+        margin-right: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .menu a:hover {
+            color: #00c6ff;
+        }
+
+/* ================= PAGE ================= */
+.page-wrapper {
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* ================= HEADER BANNER ================= */
+.header-banner {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    padding: 18px 25px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ================= TITLES ================= */
+h1, h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ================= FORM BOX ================= */
+.form-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ================= FORM GRID ================= */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+/* ================= LABEL ================= */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ================= INPUT ================= */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+    input:focus, select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 6px rgba(0,123,255,0.5);
+        outline: none;
+    }
+
+    /* ================= BUTTON ================= */
+    button, input[type=submit] {
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        color: white;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+
+        button:hover, input[type=submit]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+        }
+
+/* ================= TABLE CONTAINER ================= */
+.table-container {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ================= GRIDVIEW ================= */
+.grid {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+    .grid th {
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        color: white;
+        padding: 14px;
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .grid td {
+        padding: 14px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* STRIPES */
+    .grid tr:nth-child(even) {
+        background: #f9fbff;
+    }
+
+    /* HOVER */
+    .grid tr:hover {
+        background: #eef6ff;
+        transition: 0.3s;
+    }
+
+    /* REMOVE BORDER LOOK */
+    .grid td, .grid th {
+        border: none;
+    }
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card span {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.validation-summary-errors {
+    background: #ffe6e6;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
