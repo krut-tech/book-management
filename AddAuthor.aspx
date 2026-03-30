@@ -1,28 +1,83 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddAuthor.aspx.cs" Inherits="book_management.AddAuthor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master"
+    AutoEventWireup="true" CodeBehind="AddAuthor.aspx.cs"
+    Inherits="book_management.AddAuthor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Add Author</h2>
 
+    <div class="page-wrapper">
 
-<div class="form-box">
+        <!-- FORM -->
+        <div class="form-box">
 
-    <h2>Add Author</h2>
+            <h2>Add Author</h2>
 
-    <label>Author Name</label>
-    <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
+            <div class="form-group">
+                <label>Author Name</label>
+                <asp:TextBox ID="txtAuthor" runat="server" CssClass="input"></asp:TextBox>
 
-    <asp:RequiredFieldValidator ControlToValidate="txtAuthor"
-        ErrorMessage="Author Required" ForeColor="Red" runat="server" />
+                <asp:RequiredFieldValidator
+                    ControlToValidate="txtAuthor"
+                    ErrorMessage="Author Required"
+                    ForeColor="Red"
+                    runat="server" />
+            </div>
 
-    <asp:Button ID="btnSave" runat="server" Text="Save Author" OnClick="btnSave_Click" />
+            <div class="form-group">
+                <asp:Button ID="btnSave" runat="server"
+                    Text="Save Author"
+                    CssClass="btn"
+                    OnClick="btnSave_Click" />
+            </div>
 
-</div>
-    <div class="table-container">
-<asp:GridView ID="gvAuthor" runat="server" CssClass="grid" AutoGenerateColumns="false">
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-container">
+
+            <h3>Author List</h3>
+<asp:GridView ID="gvAuthor" runat="server"
+    AutoGenerateColumns="false"
+    CssClass="grid"
+    DataKeyNames="AuthorID"
+
+    OnRowEditing="gvAuthor_RowEditing"
+    OnRowCancelingEdit="gvAuthor_RowCancelingEdit"
+    OnRowUpdating="gvAuthor_RowUpdating"
+    OnRowDeleting="gvAuthor_RowDeleting">
+
     <Columns>
-        <asp:BoundField DataField="AuthorID" HeaderText="Author ID" />
-        <asp:BoundField DataField="AuthorName" HeaderText="Author Name" />
+
+        <asp:BoundField DataField="AuthorID" HeaderText="ID" ReadOnly="true" />
+
+        <asp:TemplateField HeaderText="Author Name">
+            <ItemTemplate>
+                <%# Eval("AuthorName") %>
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:TextBox ID="txtAuthorName" runat="server"
+                    Text='<%# Bind("AuthorName") %>' />
+            </EditItemTemplate>
+        </asp:TemplateField>
+
+        <asp:CommandField ShowEditButton="true" CausesValidation="false" />
+
+       
+        <asp:TemplateField>
+            <ItemTemplate>
+                <asp:LinkButton runat="server"
+                    CommandName="Delete"
+                    Text="Delete"
+                    CausesValidation="false"
+                    ForeColor="Red"
+                    OnClientClick="return confirm('Delete this author?');" />
+            </ItemTemplate>
+        </asp:TemplateField>
+
     </Columns>
 </asp:GridView>
+
         </div>
+
+    </div>
+
 </asp:Content>
